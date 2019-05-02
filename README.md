@@ -14,7 +14,7 @@ Although the setup installs the packages automatically, you may need to install 
 
 
 ## Core Usage and Parallel Processing
-* Current implementation will use all cores available on the local computer. If this is undesired, in the run scripts, pass the number of cores `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`
+* Current implementation will use all cores available on the local computer. If this is undesired, pass the number of cores `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`  in the run scripts,.
 * If running on multi-core computer, make sure to restrict numpy to use 1 thread per process for joblib to parallelize without CPU oversubscription, with the bash command:
 `export OPENBLAS_NUM_THREADS=1`
 
