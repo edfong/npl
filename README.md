@@ -8,7 +8,7 @@ To install npl package, clone the repo and run
 ```
 python3 setup.py develop
 ```
-## List of python3 dependencies
+## List of Python Dependencies
 numpy
 scipy
 scikit-learn
@@ -23,13 +23,15 @@ python-mnist
 Although the setup installs the packages automatically, you may need to install pystan separately using pip.
 
 
-## Core usage and parallel processing
+## Core Usage and Parallel Processing
 * Current implementation will use all cores available on the local computer. If this is undesired, in the run scripts, pass `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`
 * If running on multi-core computer, make sure to restrict numpy to use 1 thread per process for joblib to parallelize without CPU oversubscription, with the bash command:
 `export OPENBLAS_NUM_THREADS=1`
 
-## Loading datasets
+## Overview
 
+
+## Experiments
 * __Example 3.1__ - Toy GMM (in `./experiments/Toy_GMM`)
 Run `generate_gmm.py` to generate toy data
 The files in `./sim_data_plot` are the train/test data used for the plots in the paper
@@ -43,7 +45,7 @@ Place all data files downloaded off UCI ML repo in  `./data`, then run `load_dat
 * __Example 3.3__ - Bayesian Sparsity Path Analysis (in .`/experiments/Genetics`)
 Covariate data not included for privacy reasons; run `load_data.py` to generate simulated covariates from N(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes 
 
-### Supplementary
+### Supplementary Material Experiments
 * __Example E.1__ - Normal Location Model (in `./supp_experiments/Normal`)
 Generated in Jupyter notebook `Normal location model.ipynb`
 
