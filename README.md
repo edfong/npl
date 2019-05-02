@@ -5,7 +5,7 @@ Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multi
 https://arxiv.org/abs/1902.03175
 
 ## Getting Started
-To install npl package, clone the repo and run
+To install the npl package, clone the repo and run
 ```
 python3 setup.py develop
 ```
