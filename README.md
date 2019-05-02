@@ -40,7 +40,7 @@ A overview of the structure of `npl` is given below:
 ### __Example 3.1__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 
 1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, place in `./samples`.
-2. Run `run_NPL_MNIST.py` for NPL example; run `run_stan_MNIST.py` for NUTS and ADVI examples.
+2. Run `run_NPL_MNIST.py` for the NPL example; run `run_stan_MNIST.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_MNIST.py` to evaluate posterior samples. The Jupyter notebook `Plot MNIST KDE.ipynb` can be used to produce posterior plots.
  
 
