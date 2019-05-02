@@ -20,7 +20,7 @@ Although the setup installs the packages automatically, you may need to install 
 
 ## Overview
 A directory overview is given below:
-* `npl` - Contains main functions for the posterior bootstrap and evaluating posterior samples
+* `npl` - Contains main functions for the posterior bootstrap and evaluating posterior samples on test data
 * `experiments` - Contains scripts for running main experiments
 * `supp_experiments` - Contains scripts for running supplementary experiments
 
