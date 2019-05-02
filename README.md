@@ -24,7 +24,7 @@ Although the setup installs the packages automatically, you may need to install 
 
 
 ## Core usage and parallel processing
-* Current implementation will use all cores available on the local computer. If this is undesired, in the run scripts, pass `n_cores` to `boostrap_gmm` or `bootstrap_logreg`
+* Current implementation will use all cores available on the local computer. If this is undesired, in the run scripts, pass `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`
 * If running on multi-core computer, make sure to restrict numpy to use 1 thread per process for joblib to parallelize without CPU oversubscription, with the bash command:
 `export OPENBLAS_NUM_THREADS=1`
 
@@ -49,4 +49,4 @@ Generated in Jupyter notebook `Normal location model.ipynb`
 
 * __Example E.2.3__ - Comparison to Importance Sampling
 
-* __Example E.2.4__ - Comparison to MDP-NPL
+* __Example E.2.4__ - Comparison to MDP-NPL 
