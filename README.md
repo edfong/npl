@@ -34,22 +34,29 @@ A directory overview is given below:
 ### __Example 3.1__ - Toy GMM (in `./experiments/Toy_GMM`)
 
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
-
-2. 
-
-3. 
+2. Run `run_NPL_toygmm.py` for NPL example; run `run_stan_toygmm.py` for NUTS and ADVI examples.
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
 
 ### __Example 3.1__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 
-Download MNIST files from http://yann.lecun.com/exdb/mnist/, place in `./samples`.
+1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, place in `./samples`.
+2. Run `run_NPL_MNIST.py` for NPL example; run `run_stan_MNIST.py` for NUTS and ADVI examples.
+3. Run `evaluate_posterior_MNIST.py` to evaluate posterior samples. The Jupyter notebook `Plot MNIST KDE.ipynb` can be used to produce posterior plots.
+ 
+
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 
-Place all data files downloaded off UCI ML repo in  `./data`, then run `load_data.py`.
+1. Place all data files downloaded off UCI ML repo in  `./data`, then run `load_data.py`.
+2. Run `run_NPL_logreg.py` for NPL example; run `run_stan_logreg.py` for NUTS and ADVI examples.
+3. Run `evaluate_posterior_logreg.py` to evaluate posterior samples. The Jupyter notebook `Plot marginal KDE (for Adult).ipynb` can be used to produce posterior plots.
+
 
 ### __Example 3.3__ - Bayesian Sparsity Path Analysis (in .`/experiments/Genetics`)
  
-Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from N(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes. 
+1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from N(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes. 
+2. Run `run_NPL_genetics.py` for NPL example.
+3. The Jupyter notebook `Plotting Sparsity Plots.ipynb` can be used to produce sparsity plots.
 
 ### __Example E.1__ - Normal Location Model (in `./supp_experiments/Normal`)
 
