@@ -1,5 +1,5 @@
 # npl
-Python3 code for Bayesian Nonparametric Learning. 
+Python3 code for Bayesian Nonparametric Learning with a Dirichlet process prior.
 
 Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap.** In *Proceedings of the Thirty-sixth International Conference on Machine Learning (ICML) 2019.*
 https://arxiv.org/abs/1902.03175
@@ -67,11 +67,11 @@ A overview of the structure of `npl` is given below:
 ### __Example E.2.3__ - Comparison to Importance Sampling (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
 2. Run `main_IS` function in `run_NPL_toygmm.py` for NPL example; run `run_IS_toygmm.py` for importance sampling example.
-3. 
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
 
 
 ### __Example E.2.4__ - Comparison to MDP-NPL (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
 2. First run `run_stan_toygmm` to generate NUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in 
 `run_NPL_toygmm.py`.
-3.
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
