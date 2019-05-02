@@ -1,7 +1,7 @@
 # npl
 Python3 code for Bayesian Nonparametric Learning. 
 
-Fong, E., Lyddon, S. and Holmes, C. Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap. In *Proceedings of the Thirty-sixth International Conference on Machine Learning, ICML 2019
+Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap.** In *Proceedings of the Thirty-sixth International Conference on Machine Learning, ICML 2019*
 https://arxiv.org/abs/1902.03175
 
 ## Getting Started
