@@ -48,14 +48,14 @@ A overview of the structure of `npl` is given below:
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 
 1. Place all data files downloaded off UCI ML repo in  `./data`, then run `load_data.py`.
-2. Run `run_NPL_logreg.py` for NPL example; run `run_stan_logreg.py` for NUTS and ADVI examples.
+2. Run `run_NPL_logreg.py` for the NPL example; run `run_stan_logreg.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_logreg.py` to evaluate posterior samples. The Jupyter notebook `Plot marginal KDE (for Adult).ipynb` can be used to produce posterior plots.
 
 
 ### __Example 3.3__ - Bayesian Sparsity Path Analysis (in .`/experiments/Genetics`)
  
-1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from N(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes. 
-2. Run `run_NPL_genetics.py` for NPL example.
+1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from Normal(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes. 
+2. Run `run_NPL_genetics.py` for the NPL example.
 3. The Jupyter notebook `Plotting Sparsity Plots.ipynb` can be used to produce sparsity plots.
 
 
@@ -66,12 +66,11 @@ A overview of the structure of `npl` is given below:
 
 ### __Example E.2.3__ - Comparison to Importance Sampling (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
-2. Run `main_IS` function in `run_NPL_toygmm.py` for NPL example; run `run_IS_toygmm.py` for importance sampling example.
-3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
+2. Run `main_IS` function in `run_NPL_toygmm.py` for the NPL example; run `run_IS_toygmm.py` for the importance sampling example.
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples on test data. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
 
 
 ### __Example E.2.4__ - Comparison to MDP-NPL (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
-2. First run `run_stan_toygmm` to generate NUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in 
-`run_NPL_toygmm.py`.
-3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
+2. First run `run_stan_toygmm` to generate the sNUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in `run_NPL_toygmm.py` for MDP-NPL and DP-NPL respectively.
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples on test data. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
