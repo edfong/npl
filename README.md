@@ -58,14 +58,20 @@ A directory overview is given below:
 2. Run `run_NPL_genetics.py` for NPL example.
 3. The Jupyter notebook `Plotting Sparsity Plots.ipynb` can be used to produce sparsity plots.
 
+
+## Supplementary Material Experiments
 ### __Example E.1__ - Normal Location Model (in `./supp_experiments/Normal`)
 
-Generated in Jupyter notebook `Normal location model.ipynb`
+1. The Jupyter notebook `Normal location model.ipynb` contains all experiments and plots.
 
-### __Example E.2.3 - E.2.4__ - Comparison to Importance Sampling and MDP-NPL (in `./supp_experiments/Toy_GMM`)
-Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
+### __Example E.2.3__ - Comparison to Importance Sampling (in `./supp_experiments/Toy_GMM`)
+1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
+2. Run `main_IS` function in `run_NPL_toygmm.py` for NPL example; run `run_IS_toygmm.py` for importance sampling example.
+3. 
 
-Jupyter notebook `Normal location model.ipynb`
 
-### __Example E.2.3 - E.2.4__ - Comparison to Importance Sampling and MDP-NPL (in `./supp_experiments/Toy_GMM`)
-Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
+### __Example E.2.4__ - Comparison to MDP-NPL (in `./supp_experiments/Toy_GMM`)
+1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
+2. First run `run_stan_toygmm` to generate NUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in 
+`run_NPL_toygmm.py`.
+3.
