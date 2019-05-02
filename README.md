@@ -10,7 +10,7 @@ To install npl package, clone the repo and run
 python3 setup.py develop
 ```
 ## Python Dependencies
-Although the setup installs the packages automatically, you may need to install pystan separately using pip.
+Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip`.
 
 
 ## Core Usage and Parallel Processing
