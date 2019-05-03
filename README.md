@@ -13,8 +13,8 @@ python3 setup.py develop
 Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip` if `setuptools` isn't working correctly. The code has been tested on Python 3.6.7. 
 
 ## Core Usage and Parallel Processing
-* Current implementation will use all cores available on the local computer. If this is undesired, pass the number of cores `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`  in the run scripts,.
-* If running on multi-core computer, make sure to restrict numpy to use 1 thread per process for joblib to parallelize without CPU oversubscription, with the bash command:
+* Current implementation will use all cores available on the local computer. If this is undesired, pass the number of cores as `n_cores` to the function `bootstrap_gmm` or `bootstrap_logreg`  in the run scripts,.
+* If running on multi-core computer, make sure to restrict `numpy` to use 1 thread per process for `joblib` to parallelize without CPU oversubscription, with the bash command:
 `export OPENBLAS_NUM_THREADS=1`
 
 ## Overview
