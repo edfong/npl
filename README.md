@@ -97,5 +97,5 @@ arcene_valid.labels
 
 ### __Example E.2.4__ - Comparison to MDP-NPL (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper, and the files in `./sim_data` are for the tabular results.
-2. First run `run_stan_toygmm` to generate the sNUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in `run_NPL_toygmm.py` for MDP-NPL and DP-NPL respectively.
+2. First run `run_stan_toygmm` to generate the NUTS (required for MDP-NPL) and ADVI samples, then run `main_MDP` and `main_DP` in `run_NPL_toygmm.py` for MDP-NPL and DP-NPL respectively.
 3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples on test data. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
