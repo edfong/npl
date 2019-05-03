@@ -1,8 +1,10 @@
 # npl
-Python3 code for Bayesian Nonparametric Learning with a Dirichlet process prior.
+This repository contains Python code for Bayesian Nonparametric Learning with a Dirichlet process prior. More details can be found in the paper below: 
 
 Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap.** In *Proceedings of the Thirty-sixth International Conference on Machine Learning (ICML) 2019.*
 https://arxiv.org/abs/1902.03175
+
+The code has been tested on Python 3.6.7
 
 ## Getting Started
 To install the npl package, clone the repository and run
@@ -54,7 +56,7 @@ A overview of the structure of `npl` is given below:
 
 ### __Example 3.3__ - Bayesian Sparsity Path Analysis (in .`/experiments/Genetics`)
  
-1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from Normal(0,1) (uncorrelated unlike real data, and not tested) and pseudo-phenotypes. 
+1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from Normal(0,1) (uncorrelated unlike real data) and pseudo-phenotypes. 
 2. Run `run_NPL_genetics.py` for the NPL example.
 3. The Jupyter notebook `Plotting Sparsity Plots.ipynb` can be used to produce sparsity plots.
 
