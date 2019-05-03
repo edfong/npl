@@ -32,7 +32,7 @@ A overview of the structure of `npl` is given below:
 ## Datasets
 ### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 1. Download MNIST files from http://yann.lecun.com/exdb/mnist/. 
-2. Extract and place in `./samples`, so the folder has the files
+2. Extract and place in `./samples`, so the folder has the files:
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 1. Download the 'Adult','Polish companies bankruptcy 3rd year','Arcene' datasets from UCI Machine Learning Repository, links below: 
