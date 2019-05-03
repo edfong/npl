@@ -38,9 +38,10 @@ def init_toy(R_restarts, K_clusters,B_postsamples, D_data):
     return pi_init,mu_init,sigma_init
 
 def init_MNIST(R_restarts, K_cluster,B_postsamples, D_data):
-    pi_init = np.tile([np.load('./init_parameters/pi_init_VB.npy')],(B_postsamples,1))
-    mu_init = np.tile([np.load('./init_parameters/mu_init_VB.npy')],(B_postsamples,1,1))
-    sigma_init = np.tile([np.load('./init_parameters/sigma_init_VB.npy')],(B_postsamples,1,1))
+    import pkg_resources
+    pi_init = np.tile([np.load(pkg_resources.resource_filename('npl','init_parameters/pi_init_VB.npy'))],(B_postsamples,1))
+    mu_init = np.tile([np.load(pkg_resources.resource_filename('npl','init_parameters/mu_init_VB.npy'))],(B_postsamples,1,1))
+    sigma_init = np.tile([np.load(pkg_resources.resource_filename('npl','init_parameters/sigma_init_VB.npy'))],(B_postsamples,1,1))
     return pi_init,mu_init,sigma_init
 
 def init_params(y,N_data,K_clusters,D_data,tol,max_iter): #initialize parameters for FI-NPL by picking MLE
