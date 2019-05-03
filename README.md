@@ -20,6 +20,10 @@ Although the setup installs the packages automatically, you may need to install 
 ## Overview
 A directory overview is given below:
 * `npl` - Contains main functions for the posterior bootstrap and evaluating posterior samples on test data
+    * `bootstrap_logreg.py` and `bootstrap_gmm.py` contain the main posterior bootstrap sampling functions
+    * `maximise_logreg.py` and `maximise_gmm.py` contain functions for sampling the prior pseudo-samples, initialising random restarts and maximising the weighted log likelihood. These functions can be edited to use NPL with different models and priors.
+    * `./evaluate` contains functions for calculating log posterior predictives of the different posteriors
+
 * `experiments` - Contains scripts for running main experiments
 * `supp_experiments` - Contains scripts for running supplementary experiments
 
