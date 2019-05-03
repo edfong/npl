@@ -4,7 +4,7 @@ This repository contains Python code for Bayesian Nonparametric Learning with a 
 Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap.** In *Proceedings of the Thirty-sixth International Conference on Machine Learning (ICML) 2019.*
 https://arxiv.org/abs/1902.03175
 
-The code has been tested on Python 3.6.7
+The code has been tested on Python 3.6.7. 
 
 ## Getting Started
 To install the npl package, clone the repository and run
