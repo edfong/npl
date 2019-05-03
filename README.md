@@ -10,7 +10,7 @@ To install the npl package, clone the repository and run
 python3 setup.py develop
 ```
 ## Python Dependencies
-Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip` if `setuptools` isn't working correctly. The code has been tested on Python 3.6.7. 
+Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip` if `setuptools` isn't working correctly. Please make sure the version of `pystan` is newer than v2.19.0.0 or the evaluate scripts may not work properly. The code has been tested on Python 3.6.7. 
 
 ## Core Usage and Parallel Processing
 * Current implementation will use all cores available on the local computer. If this is undesired, pass the number of cores as `n_cores` to the function `bootstrap_gmm` or `bootstrap_logreg`  in the run scripts,.
