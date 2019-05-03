@@ -4,16 +4,13 @@ This repository contains Python code for Bayesian Nonparametric Learning with a 
 Fong, E., Lyddon, S. and Holmes, C. **Scalable Nonparametric Sampling from Multimodal Posteriors with the Posterior Bootstrap.** In *Proceedings of the Thirty-sixth International Conference on Machine Learning (ICML) 2019.*
 https://arxiv.org/abs/1902.03175
 
-The code has been tested on Python 3.6.7. 
-
 ## Getting Started
 To install the npl package, clone the repository and run
 ```
 python3 setup.py develop
 ```
 ## Python Dependencies
-Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip`.
-
+Although the setup installs the packages automatically, you may need to install `pystan` separately using `pip` if `setuptools` isn't working correctly. The code has been tested on Python 3.6.7. 
 
 ## Core Usage and Parallel Processing
 * Current implementation will use all cores available on the local computer. If this is undesired, pass the number of cores `n_cores` to `bootstrap_gmm` or `bootstrap_logreg`  in the run scripts,.
