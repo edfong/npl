@@ -19,5 +19,6 @@ setup(name='npl',
           'joblib',
           'tqdm',
           'python-mnist'
-      ]
+      ],
+      include_package_data=True
       )
