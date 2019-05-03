@@ -31,10 +31,16 @@ A overview of the structure of `npl` is given below:
 
 ## Datasets
 ### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
-Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./samples`.
+1. Download MNIST files from http://yann.lecun.com/exdb/mnist/. 
+2. Extract and place in `./samples`, so the folder has the files
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
-Download data files from UCI, Place all data files in  `./data`,
+1. Download the 'Adult','Polish companies bankruptcy 3rd year','Arcene' datasets from UCI Machine Learning Repository, links below: 
+https://archive.ics.uci.edu/ml/datasets/adult
+https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data
+https://archive.ics.uci.edu/ml/datasets/Arcene
+
+2. Place all data files in  `./data`, so the folder has the files:
 
 ## Experiments
 ### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
