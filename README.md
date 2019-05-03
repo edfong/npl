@@ -35,12 +35,21 @@ A overview of the structure of `npl` is given below:
 2. Extract and place in `./samples`, so the folder has the files:
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
-1. Download the 'Adult','Polish companies bankruptcy 3rd year','Arcene' datasets from UCI Machine Learning Repository, links below: 
+1. Download the __Adult__, __Polish companies bankruptcy 3rd year__, and __Arcene__ datasets from UCI Machine Learning Repository, links below: 
 * __Adult__ - https://archive.ics.uci.edu/ml/datasets/adult
 * __Polish__- https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data
 *  __Arcene__- https://archive.ics.uci.edu/ml/datasets/Arcene
 
-2. Place all data files in  `./data`, so the folder has the files:
+2. Extract and place all data files in  `./data`, so the folder has the files:
+```
+3year.arff
+adult.data
+adult.test
+arcene_train.data
+arcene_train.labels
+arcene_valid.data
+arcene_valid.labels
+```
 
 ## Experiments
 ### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
