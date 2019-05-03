@@ -19,12 +19,6 @@ def setup_model():
     with open('model.pkl', 'wb') as f:
         pickle.dump(sm, f)
 
-setup_model()
-#load Stan model
-sm = pickle.load(open('model.pkl','rb'))
-
-
-
 #Loop over seeds
 def main(seed):
     #load Toy GMM data, put in hyperparameters
