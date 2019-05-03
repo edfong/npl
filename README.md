@@ -32,7 +32,13 @@ A overview of the structure of `npl` is given below:
 ## Datasets
 ### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 1. Download MNIST files from http://yann.lecun.com/exdb/mnist/. 
-2. Extract and place in `./samples`, so the folder has the files:
+2. Extract and place in `./samples`, so the folder contains the files:
+```
+t10k-images-idx3-ubyte
+t10k-labels-idx1-ubyte
+train-images-idx3-ubyte
+train-labels-idx1-ubyte
+```
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 1. Download the __Adult__, __Polish companies bankruptcy 3rd year__, and __Arcene__ datasets from UCI Machine Learning Repository, links below: 
@@ -40,7 +46,7 @@ A overview of the structure of `npl` is given below:
 * __Polish__- https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data
 *  __Arcene__- https://archive.ics.uci.edu/ml/datasets/Arcene
 
-2. Extract and place all data files in  `./data`, so the folder has the files:
+2. Extract and place all data files in  `./data`, so the folder contains the files:
 ```
 3year.arff
 adult.data
@@ -54,7 +60,7 @@ arcene_valid.labels
 ## Experiments
 ### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
 
-1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper, and the files in `./sim_data` are for the tabular results.
+1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper, and the files in `./sim_data` are the datasets for the tabular results.
 2. Run `run_NPL_toygmm.py` for the NPL example and `run_stan_toygmm.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
 
