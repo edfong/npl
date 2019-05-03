@@ -38,15 +38,14 @@ A overview of the structure of `npl` is given below:
 
 ### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 
-1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, place in `./samples`.
+1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./samples`.
 2. Run `run_NPL_MNIST.py` for the NPL example and `run_stan_MNIST.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_MNIST.py` to evaluate posterior samples. The Jupyter notebook `Plot MNIST KDE.ipynb` can be used to produce posterior plots.
  
 
-
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 
-1. Place all data files downloaded off UCI ML repo in  `./data`, then run `load_data.py`.
+1. Download data files from UCI, Place all data files in  `./data`, then run `load_data.py`.
 2. Run `run_NPL_logreg.py` for the NPL example and `run_stan_logreg.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_logreg.py` to evaluate posterior samples. The Jupyter notebook `Plot marginal KDE (for Adult).ipynb` can be used to produce posterior plots.
 
