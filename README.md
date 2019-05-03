@@ -55,7 +55,7 @@ Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./sam
 
 ### __Example 3.3__ - Bayesian Sparsity Path Analysis (in .`/experiments/Genetics`)
  
-1. Covariate data is not included for privacy reasons; run `load_data.py` to generate simulated covariates from Normal(0,1) (uncorrelated unlike real data) and pseudo-phenotypes. 
+1. Covariate data is not included for privacy reasons. Run `load_data.py` to generate simulated covariates from Normal(0,1) (uncorrelated unlike real data) and pseudo-phenotypes. 
 2. Run `run_NPL_genetics.py` for the NPL example.
 3. The Jupyter notebook `Plotting Sparsity Plots.ipynb` can be used to produce sparsity plots.
 
