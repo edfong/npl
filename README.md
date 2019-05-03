@@ -30,8 +30,11 @@ A overview of the structure of `npl` is given below:
 * `./evaluate` contains functions for calculating log posterior predictives of the different posteriors
 
 ## Datasets
+### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./samples`.
- Download data files from UCI, Place all data files in  `./data`,
+
+### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
+Download data files from UCI, Place all data files in  `./data`,
 
 ## Experiments
 ### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
