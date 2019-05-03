@@ -30,13 +30,13 @@ A overview of the structure of `npl` is given below:
 * `./evaluate` contains functions for calculating log posterior predictives of the different posteriors
 
 ## Experiments
-### __Example 3.1__ - Toy GMM (in `./experiments/Toy_GMM`)
+### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
 
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper, and the files in `./sim_data` are for the tabular results.
 2. Run `run_NPL_toygmm.py` for the NPL example and `run_stan_toygmm.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
 
-### __Example 3.1__ - MNIST GMM (in `./experiments/MNIST_GMM`)
+### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 
 1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, place in `./samples`.
 2. Run `run_NPL_MNIST.py` for the NPL example and `run_stan_MNIST.py` for the NUTS and ADVI examples.
