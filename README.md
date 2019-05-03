@@ -29,6 +29,10 @@ A overview of the structure of `npl` is given below:
 * `maximise_logreg.py` and `maximise_gmm.py` contain functions for sampling the prior pseudo-samples, initialising random restarts and maximising the weighted log likelihood. These functions can be edited to use NPL with different models and priors.
 * `./evaluate` contains functions for calculating log posterior predictives of the different posteriors
 
+## Datasets
+Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./samples`.
+ Download data files from UCI, Place all data files in  `./data`,
+
 ## Experiments
 ### __Example 3.1.1__ - Toy GMM (in `./experiments/Toy_GMM`)
 
@@ -38,14 +42,13 @@ A overview of the structure of `npl` is given below:
 
 ### __Example 3.1.2__ - MNIST GMM (in `./experiments/MNIST_GMM`)
 
-1. Download MNIST files from http://yann.lecun.com/exdb/mnist/, and place in `./samples`.
-2. Run `run_NPL_MNIST.py` for the NPL example and `run_stan_MNIST.py` for the NUTS and ADVI examples.
-3. Run `evaluate_posterior_MNIST.py` to evaluate posterior samples. The Jupyter notebook `Plot MNIST KDE.ipynb` can be used to produce posterior plots.
+1. Run `run_NPL_MNIST.py` for the NPL example and `run_stan_MNIST.py` for the NUTS and ADVI examples.
+2. Run `evaluate_posterior_MNIST.py` to evaluate posterior samples. The Jupyter notebook `Plot MNIST KDE.ipynb` can be used to produce posterior plots.
  
 
 ### __Example 3.2__ - Logistic Regression with ARD priors (in `./experiments/LogReg_ARD`)
 
-1. Download data files from UCI, Place all data files in  `./data`, then run `load_data.py`.
+1. Run `load_data.py` to preprocess data and generate different train-test splits.
 2. Run `run_NPL_logreg.py` for the NPL example and `run_stan_logreg.py` for the NUTS and ADVI examples.
 3. Run `evaluate_posterior_logreg.py` to evaluate posterior samples. The Jupyter notebook `Plot marginal KDE (for Adult).ipynb` can be used to produce posterior plots.
 
