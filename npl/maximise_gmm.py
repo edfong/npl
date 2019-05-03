@@ -7,27 +7,30 @@ import npl.sk_gaussian_mixture as skgm
 from scipy.stats import norm
 from scipy.stats import invgamma
 
-def sampleprior_MNIST(y,D_data,T_trunc,K_clusters, postsamples = None):  #generate prior data points
-    y_prior = norm.rvs(loc = 0,scale = 0.1, size = (T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
+def sampleprior_MNIST(D_data,T_trunc,K_clusters, B_postsamples, postsamples = None):  #generate prior data points
+    y_prior = norm.rvs(loc = 0,scale = 0.1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
     return y_prior
 
-def sampleprior_toy(y,D_data,T_trunc,K_clusters, postsamples = None):  #generate prior data points
-    y_prior = norm.rvs(loc = 0,scale = 1, size = (T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
+def sampleprior_toy(D_data,T_trunc,K_clusters,B_postsamples, postsamples = None):  #generate prior data points
+    y_prior = norm.rvs(loc = 0,scale = 1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
     return y_prior
 
-def sampleprior_toyMDP(y,D_data,T_trunc,K_clusters, postsamples):  #generate prior data points
+#Update this
+def sampleprior_toyMDP(D_data,T_trunc,K_clusters, B_postsamples,postsamples):  #generate prior data points
     par_nuts = postsamples
     pi_nuts =par_nuts.iloc[:,3:K_clusters+3]
     mu_nuts =par_nuts.iloc[:,3+K_clusters: 3+(K_clusters*(D_data+1))]
     sigma_nuts = par_nuts.iloc[:,3+K_clusters*(D_data+1) :3+ K_clusters*(2*D_data+1)]
 
-    B_postsamples = np.shape(pi_nuts)[0]
+    B_nuts = np.shape(pi_nuts)[0]
 
-    ind_postsample = np.random.choice(B_postsamples)
+    ind_postsample = np.random.choice(B_nuts,size = B_postsamples)
+    y_prior = np.zeros((B_postsamples,T_trunc,D_data))
 
-    ind_cluster = np.random.choice(K_clusters, p = pi_nuts.iloc[ind_postsample])
-
-    y_prior = norm.rvs(loc = mu_nuts.iloc[ind_postsample,ind_cluster], scale = sigma_nuts.iloc[ind_postsample,ind_cluster] , size = (T_trunc,D_data))
+    for i in range(B_postsamples): 
+        ind_cluster = np.random.choice(K_clusters, p = pi_nuts.iloc[ind_postsample[i]])
+        y_prior[i] = norm.rvs(loc = mu_nuts.iloc[ind_postsample[i],ind_cluster], scale = sigma_nuts.iloc[ind_postsample[i],ind_cluster] \
+            , size = (T_trunc,D_data))
 
     return y_prior
 
@@ -76,9 +79,8 @@ def maximise_mle(y,weights,pi_init,mu_init, sigma_init,K_clusters,tol,max_iter,N
     return pi_bb,mu_bb,sigma_bb
 
 
-def maximise(y,weights,pi_init,mu_init,sigma_init,alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data,sampleprior, postsamples = None): #maximization when c = 0 for RR-NPL
+def maximise(y,y_prior,weights,pi_init,mu_init,sigma_init,alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data, postsamples = None): #maximization when c = 0 for RR-NPL
     if alph_conc !=0:
-        y_prior = sampleprior(y,D_data,T_trunc,K_clusters,postsamples)
         y_tot = np.concatenate((y,y_prior))
     else:
         y_tot = y

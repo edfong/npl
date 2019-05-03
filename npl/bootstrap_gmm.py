@@ -67,8 +67,10 @@ def bootstrap_gmm(B_postsamples,alph_conc,T_trunc,y,N_data,D_data,K_clusters,R_r
     if alph_conc!=0:
         alphas = np.concatenate((np.ones(N_data), (alph_conc/T_trunc)*np.ones(T_trunc)))
         weights = np.random.dirichlet(alphas,B_postsamples) 
+        y_prior = sampleprior(D_data,T_trunc,K_clusters,B_postsamples, postsamples)
     else:
         weights = np.random.dirichlet(np.ones(N_data), B_postsamples)
+        y_prior = np.zeros(B_postsamples)
 
     #Initialize parameters randomly for RR-NPL
     pi_init,mu_init,sigma_init = init(R_restarts, K_clusters,B_postsamples, D_data)
@@ -80,9 +82,9 @@ def bootstrap_gmm(B_postsamples,alph_conc,T_trunc,y,N_data,D_data,K_clusters,R_r
         temp = Parallel(n_jobs=n_cores, backend= 'loky')(delayed(mgmm.maximise_mle)(y,weights[i],pi_init_mle,\
             mu_init_mle,sigma_init_mle,K_clusters,tol,max_iter,N_data) for i in tqdm(range(B_postsamples))) 
     else:
-        temp = Parallel(n_jobs=n_cores, backend= 'loky')(delayed(mgmm.maximise)(y,weights[i],\
+        temp = Parallel(n_jobs=n_cores, backend= 'loky')(delayed(mgmm.maximise)(y,y_prior[i],weights[i],\
             pi_init[i*R_restarts:(i+1)*R_restarts],mu_init[i*R_restarts:(i+1)*R_restarts],sigma_init[i*R_restarts:(i+1)*R_restarts],\
-            alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data,sampleprior, postsamples = postsamples) for i in tqdm(range(B_postsamples)))
+            alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data, postsamples = postsamples) for i in tqdm(range(B_postsamples)))
     
 
     for i in range(B_postsamples):

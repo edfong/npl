@@ -47,11 +47,12 @@ def bootstrap_logreg(B_postsamples,alph_conc,T_trunc,y,x,N_data,D_covariate,a,b,
     if alph_conc==0:
         alphas = np.ones(N_data)
         weights = np.random.dirichlet(alphas,B_postsamples)   
-        y_tot = copy.copy(y)
-        x_tot = copy.copy(x)
+        y_prior,x_prior = mlr.sampleprior(x,N_data,D_covariate,T_trunc,B_postsamples)
     else:
         alphas = np.concatenate((np.ones(N_data), (alph_conc/T_trunc)*np.ones(T_trunc)))
         weights = np.random.dirichlet(alphas,B_postsamples)
+        y_prior = np.zeros(B_postsamples)
+        x_prior = np.zeros(B_postsamples)
 
     #Initialize parameters 
     ll_bb = np.zeros(B_postsamples)      #weighted log loss
@@ -62,7 +63,7 @@ def bootstrap_logreg(B_postsamples,alph_conc,T_trunc,y,x,N_data,D_covariate,a,b,
     beta_init = np.random.randn(R_restarts*B_postsamples,D_covariate+1)
 
     #Carry out weighted loss maximizations in parallel with joblib, pass different set of R_restarts inits for each bootstrap
-    temp = Parallel(n_jobs=n_cores, backend= 'loky')(delayed(mlr.maximise)(y,x,N_data,D_covariate,alph_conc,T_trunc,weights[i],beta_init[i*R_restarts:(i+1)*R_restarts],a,b,gamma,R_restarts) for i in tqdm(range(B_postsamples)))
+    temp = Parallel(n_jobs=n_cores, backend= 'loky')(delayed(mlr.maximise)(y,x,y_prior[i],x_prior[i],N_data,D_covariate,alph_conc,T_trunc,weights[i],beta_init[i*R_restarts:(i+1)*R_restarts],a,b,gamma,R_restarts) for i in tqdm(range(B_postsamples)))
 
     #Convert to numpy array
     for i in range(B_postsamples):
