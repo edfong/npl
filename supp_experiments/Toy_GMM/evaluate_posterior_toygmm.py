@@ -151,11 +151,11 @@ def eval(method):
     print(np.std(time))
 
 if __name__=='__main__':
-    # eval('RRNPL_IS')
+    eval('RRNPL_IS')
     eval('IS')
-    # eval('DPNPL')
-    # eval('MDPNPL')
-    # eval('NUTS')
-    # eval('ADVI')
+    eval('DPNPL')
+    eval('MDPNPL')
+    eval('NUTS')
+    eval('ADVI')
 
 
