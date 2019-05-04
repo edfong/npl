@@ -10,9 +10,9 @@ from scipy.stats import bernoulli
 
 
 def sampleprior(x,N_data,D_covariate,T_trunc,B_postsamples): #sample prior pseudo-samples
-    ind_x = np.random.randint(low = 0, high = N_data, size = (T_trunc,B_postsamples))  #sample x indices with replacement
+    ind_x = np.random.randint(low = 0, high = N_data, size = (B_postsamples,T_trunc))  #sample x indices with replacement
     x_prior = x[ind_x]
-    y_prior = bernoulli.rvs(0.5, size = (T_trunc,B_postsamples))
+    y_prior = bernoulli.rvs(0.5, size = (B_postsamples,T_trunc))
     return y_prior, x_prior
 
 def func(beta,weights,y,x,a,b,gamma): #calculate weighted loss

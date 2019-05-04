@@ -44,13 +44,13 @@ import os
 
 
 def bootstrap_logreg(B_postsamples,alph_conc,T_trunc,y,x,N_data,D_covariate,a,b,gamma,n_cores = -1):   #Bootstrap posterior
-    if alph_conc==0:
-        alphas = np.ones(N_data)
-        weights = np.random.dirichlet(alphas,B_postsamples)   
-        y_prior,x_prior = mlr.sampleprior(x,N_data,D_covariate,T_trunc,B_postsamples)
-    else:
+    if alph_conc!=0:
         alphas = np.concatenate((np.ones(N_data), (alph_conc/T_trunc)*np.ones(T_trunc)))
         weights = np.random.dirichlet(alphas,B_postsamples)
+        y_prior,x_prior = mlr.sampleprior(x,N_data,D_covariate,T_trunc,B_postsamples) 
+    else:
+        alphas = np.ones(N_data)
+        weights = np.random.dirichlet(alphas,B_postsamples)   
         y_prior = np.zeros(B_postsamples)
         x_prior = np.zeros(B_postsamples)
 
