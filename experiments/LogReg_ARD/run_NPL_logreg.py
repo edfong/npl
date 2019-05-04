@@ -66,7 +66,7 @@ def load_data(dataset,seed):
 
 def main(dataset, B_postsamples):
     #same parameters between datasets
-    T_trunc = 500
+    T_trunc = 100
     a=1
     b = 1 #is rate of gamma hyperprior
     for i in range(30):
