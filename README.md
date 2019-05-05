@@ -91,7 +91,7 @@ arcene_valid.labels
 ### __Example E.2.3__ - Comparison to Importance Sampling (in `./supp_experiments/Toy_GMM`)
 1. Run `generate_gmm.py` to generate toy data. The files in `./sim_data_plot` are the train/test data used for the plots in the paper.
 2. Run `run_NPL_toygmm.py` for the NPL example (note that the MDP example will be run too) and `run_IS_toygmm.py` for the importance sampling example.
-3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples on test data. The Jupyter notebook `Plot bivariate KDEs for GMM.ipynb` can be used to produce posterior plots.
+3. Run `evaluate_posterior_toygmm.py` to evaluate posterior samples on test data. 
 
 
 ### __Example E.2.4__ - Comparison to MDP-NPL (in `./supp_experiments/Toy_GMM`)
