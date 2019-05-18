@@ -1,4 +1,4 @@
-"""Gaussian Mixture Model."""
+"""Gaussian Mixture Model. Added weighted log likelihood maximization. """
 
 # Author: Wei Xue <xuewei4d@gmail.com>
 # Modified by Thierry Guillemot <thierry.guillemot.work@gmail.com>
