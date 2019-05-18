@@ -28,9 +28,9 @@ gamma = 1/N_data
 #Set parameters
 B_postsamples =4000		#number of bootstrap samples
 alph_conc = 0			#prior strength
-T_trunc = 500				#DP truncation
+T_trunc = 500			#DP truncation
 
-P_steps = 450		#number of different b values
+P_steps = 450		    #number of different b values
 
 #Initialize
 beta_samps = np.zeros((P_steps,B_postsamples,D_data+1))   #regression coefficient + intercept as the last value
