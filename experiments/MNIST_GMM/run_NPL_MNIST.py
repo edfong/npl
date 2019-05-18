@@ -6,7 +6,7 @@ from npl import bootstrap_gmm as bgmm
 from npl.maximise_gmm import init_MNIST
 from npl.maximise_gmm import sampleprior_MNIST
 
-def main(B_postsamples,alph_conc):  #alph_conc is the prior concentration, B_postsamples is number of bootstrap
+def main(B_postsamples,alph_conc):  #alph_conc is the prior concentration, B_postsamples is number of bootstrap samples
     N_data = 10000
     gmm_data = lm.MNIST_load(N_data)
     y = gmm_data['y']
