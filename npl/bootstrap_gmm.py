@@ -85,7 +85,7 @@ def bootstrap_gmm(B_postsamples,alph_conc,T_trunc,y,N_data,D_data,K_clusters,R_r
             pi_init[i*R_restarts:(i+1)*R_restarts],mu_init[i*R_restarts:(i+1)*R_restarts],sigma_init[i*R_restarts:(i+1)*R_restarts],\
             alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data, postsamples = postsamples) for i in tqdm(range(B_postsamples)))
     
-
+    #Convert to numpy array
     for i in range(B_postsamples):
         pi_bb[i] = temp[i][0]
         mu_bb[i] = temp[i][1]
