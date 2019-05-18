@@ -8,14 +8,13 @@ from scipy.stats import norm
 from scipy.stats import invgamma
 
 def sampleprior_MNIST(D_data,T_trunc,K_clusters, B_postsamples, postsamples = None):  #generate prior data points
-    y_prior = norm.rvs(loc = 0,scale = 0.1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
+    y_prior = norm.rvs(loc = 0,scale = 0.1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM
     return y_prior
 
 def sampleprior_toy(D_data,T_trunc,K_clusters,B_postsamples, postsamples = None):  #generate prior data points
-    y_prior = norm.rvs(loc = 0,scale = 1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM, centre at empirical mean
+    y_prior = norm.rvs(loc = 0,scale = 1, size = (B_postsamples,T_trunc,D_data))   #approximately the marginal y from GMM
     return y_prior
 
-#Update this
 def sampleprior_toyMDP(D_data,T_trunc,K_clusters, B_postsamples,postsamples):  #generate prior data points
     par_nuts = postsamples
     pi_nuts =par_nuts.iloc[:,3:K_clusters+3]
@@ -50,7 +49,7 @@ def init_MNIST(R_restarts, K_cluster,B_postsamples, D_data):
 def init_params(y,N_data,K_clusters,D_data,tol,max_iter): #initialize parameters for FI-NPL by picking MLE
     R_restarts = 10
 
-    pi_bb = np.zeros((R_restarts,K_clusters))       #mixing weights (randomly)
+    pi_bb = np.zeros((R_restarts,K_clusters))            #mixing weights 
     mu_bb = np.zeros((R_restarts,K_clusters,D_data))     #means
     sigma_bb = np.zeros((R_restarts,K_clusters,D_data))  #covariances 
     ll_bb = np.zeros(R_restarts)
@@ -79,13 +78,13 @@ def maximise_mle(y,weights,pi_init,mu_init, sigma_init,K_clusters,tol,max_iter,N
     return pi_bb,mu_bb,sigma_bb
 
 
-def maximise(y,y_prior,weights,pi_init,mu_init,sigma_init,alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data, postsamples = None): #maximization when c = 0 for RR-NPL
+def maximise(y,y_prior,weights,pi_init,mu_init,sigma_init,alph_conc, T_trunc,K_clusters,tol,max_iter,R_restarts,N_data,D_data, postsamples = None): #maximization for RR-NPL
     if alph_conc !=0:
         y_tot = np.concatenate((y,y_prior))
     else:
         y_tot = y
-    pi_bb = np.zeros((R_restarts,K_clusters))      #mixing weights (randomly)
-    mu_bb = np.zeros((R_restarts,K_clusters,D_data))         #means
+    pi_bb = np.zeros((R_restarts,K_clusters))             #mixing weights
+    mu_bb = np.zeros((R_restarts,K_clusters,D_data))      #means
     sigma_bb = np.zeros((R_restarts,K_clusters,D_data))   #covariances 
     ll_bb = np.zeros(R_restarts)
     n_tot = np.shape(y_tot)[0]
