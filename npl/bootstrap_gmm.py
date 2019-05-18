@@ -57,13 +57,12 @@ from npl import maximise_gmm as mgmm
 
 def bootstrap_gmm(B_postsamples,alph_conc,T_trunc,y,N_data,D_data,K_clusters,R_restarts,tol,max_iter,init,sampleprior,postsamples= None,n_cores = -1):
     #Declare parameters
-    pi_bb = np.zeros((B_postsamples,K_clusters))         #mixing weights (randomly)
+    pi_bb = np.zeros((B_postsamples,K_clusters))              #mixing weights 
     mu_bb = np.zeros((B_postsamples,K_clusters,D_data))       #means
     sigma_bb = np.zeros((B_postsamples,K_clusters,D_data))    #covariances 
   
 
-    #Prepare for parallelization
-    #concatenate y_tots
+    #Generate prior pseudo-samples and concatenate y_tots
     if alph_conc!=0:
         alphas = np.concatenate((np.ones(N_data), (alph_conc/T_trunc)*np.ones(T_trunc)))
         weights = np.random.dirichlet(alphas,B_postsamples) 
