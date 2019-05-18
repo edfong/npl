@@ -31,7 +31,7 @@ def main(B_postsamples,R_restarts): #B_postsamples is number of bootstrap sample
         y,N_data,K_clusters,D_data = load_data(seed)
         #prior settings
         alph_conc=0         #alph_concentration
-        T_trunc = 500     #DP truncation
+        T_trunc = 500       #DP truncation
         tol = 1e-7
         max_iter = 6000
   
