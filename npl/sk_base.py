@@ -1,4 +1,4 @@
-"""Base class for mixture models."""
+"""Base class for mixture models. Added score_lppd to return the log pointwise predictive density"""
 
 # Author: Wei Xue <xuewei4d@gmail.com>
 # Modified by Thierry Guillemot <thierry.guillemot.work@gmail.com>
