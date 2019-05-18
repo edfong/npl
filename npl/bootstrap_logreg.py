@@ -55,8 +55,8 @@ def bootstrap_logreg(B_postsamples,alph_conc,T_trunc,y,x,N_data,D_covariate,a,b,
         x_prior = np.zeros(B_postsamples)
 
     #Initialize parameters 
-    ll_bb = np.zeros(B_postsamples)      #weighted log loss
-    beta_bb = np.zeros((B_postsamples,D_covariate+1)) #regression coefficient + intercept as the last value
+    ll_bb = np.zeros(B_postsamples)                     #weighted log loss
+    beta_bb = np.zeros((B_postsamples,D_covariate+1))   #regression coefficient + intercept as the last value
 
     #Initialize RR-NPL with normal(0,1)
     R_restarts = 1
