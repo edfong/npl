@@ -27,7 +27,7 @@ def load_data(dataset,seed):
 
         #prior and loss settings from paper
         alph_conc = 0           #prior strength
-        gamma = 1/N_data    #loss scaling relative to log-likelihood 
+        gamma = 1/N_data        #loss scaling relative to log-likelihood 
 
 
     #load adult
@@ -68,7 +68,7 @@ def main(dataset, B_postsamples):
     #same parameters between datasets
     T_trunc = 100
     a=1
-    b = 1 #is rate of gamma hyperprior
+    b = 1 #rate of gamma hyperprior
     for i in range(30):
 
         seed = 100+i
